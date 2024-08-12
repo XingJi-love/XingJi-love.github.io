@@ -1,0 +1,683 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>第1讲：C语言常⻅概念 | XingJiの博客</title><meta name="keywords" content="C语言程序设计知识点总结"><meta name="author" content="XingJiの博客"><meta name="copyright" content="XingJiの博客"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="第1讲：C语言常⻅概念"><meta name="application-name" content="第1讲：C语言常⻅概念"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="第1讲：C语言常⻅概念"><meta property="og:url" content="https://xingji-love.zeabur.app/posts/26817/index.html"><meta property="og:site_name" content="XingJiの博客"><meta property="og:description" content="正文开始  C语言是什么？人和人交流使用的是自然语言，如：汉语、英语、日语 那人和计算机是怎么交流的呢？使用 计算机语言 。 目前已知已经有上千种计算机语言，人们是通过计算机语言写的程序，给计算机下达指令，让计算机工作的。 C语言就是众多计算机语言中的一种，当然C++&amp;#x2F;Java&amp;amp;#x2F"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=b788c47f-c870-abc8-ea98-779e81df70d4"><meta property="article:author" content="XingJiの博客"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=b788c47f-c870-abc8-ea98-779e81df70d4"><meta name="description" content="正文开始  C语言是什么？人和人交流使用的是自然语言，如：汉语、英语、日语 那人和计算机是怎么交流的呢？使用 计算机语言 。 目前已知已经有上千种计算机语言，人们是通过计算机语言写的程序，给计算机下达指令，让计算机工作的。 C语言就是众多计算机语言中的一种，当然C++&amp;#x2F;Java&amp;amp;#x2F"><link rel="shortcut icon" href="/img/XingJi.jpg"><link rel="canonical" href="https://xingji-love.zeabur.app/posts/26817/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'XingJiの博客',
+  title: '第1讲：C语言常⻅概念',
+  postAI: '',
+  pageFillDescription: 'C语言是什么？, C语言的历史和辉煌, 编译器的选择VS 2022, 编译和链接, 编译器的对比, VS2022的优缺点, VS项目和源文件、头文件介绍, 第一个C语言程序, main函数, printf和库函数, 关键字介绍, 字符和ASCII编码, 字符串和\ 0, 转义字符, 语句和语句分类, 空语句, 表达式语句, 函数调用语句, 复合语句, 控制语句, 注释是什么？为什么写注释？, 注释的 2 种形式, x2F**x2F的形式, x2Fx2F的形式, 注释会被替换正文开始语言是什么人和人交流使用的是自然语言如汉语英语日语那人和计算机是怎么交流的呢使用计算机语言目前已知已经有上千种计算机语言人们是通过计算机语言写的程序给计算机下达指令让计算机工作的语言就是众多计算机语言中的一种当然都是计算机语言语言的历史和辉煌语言最初是作为系统的开发工具而发明的编译器的选择编译和链接语言是一编译型计算机语言语言源代码都是文本文件文本文件本身无法执行必须通过编译器翻译和链接器的链接生成二进制的可执行文件可执行文件才能执行语言代码是放在为后缀的文件中的要得到最终运行的可执行程序中间要经过编译和链接个过程项目中的文件文件的展示语言代码一个工程一般都会有多个源文件组成如下图所示演示了源程序经过编译器和链接器处理的过程注每个源文件单独经过编译器处理生成对应的目标文件为后缀的文件多个目标文件和库文件经过链接器处理生成对应的可执行程序文件这就是在电脑上语言程序生成的可执行文件可执行程序编译器的对比语言是一编译型的计算机语言需要依赖编译器将计算机语言转换成机器能够执行的机器指令那我们常的语言编译器都有哪些呢比如就是一些常的编译器当然也有一些集成开发环境如等集成开发环境用于提供程序开发环境的应用程序一般包括代码编辑器编译器调试器和图形用戶界面等工具集成了代码编写功能分析功能编译功能调试功能等一体化的开发软件服务套集成了安装报包较大一些安装简单无需多余配置使用起来非常方便集成了苹果电脑上的开发工具集成了这个工具比较小众需要配置环境不太推荐集成了小巧但是工具过于简单对于代码格的养成不好一些竞赛使用是默认使用编译器是可以配置的工具是收费所以暂时推荐大家使用整体考虑推荐大家安装的社区版本学习免费使用方便工作中常的安装教程的优缺点优点是一个主流的集成开发环境企业中使用较为普遍包含了编辑器编译器调试器功能强大直接安装即可使用基本不用额外配置环境上手容易默认界面是中文的初学者友好缺点功能丰富安装包大占用空间多项目和源文件头文件介绍在上写代码我们是需要创建项目的直接新建项目就可以了在项目中就可以添加源文件和头文件语言把为后缀的文件称为源文件把为后缀的文件称为头文件头文件和源文件在中展示头文件和源文件在磁盘上第一个语言程序这里演示中创建项目和编写代码的过程并运行出结果在上运行代码的快捷键函数每个语言程序不管有多少行代码都是从函数开始执行的函数是程序的入口函数也被叫做主函数前面的表示函数执行结束的时候返回一个整型类型的值所以在函数的最后写正好前后呼应函数是程序的入口函数有且仅有一个即使一个项目中有多个文件但是只能有一个函数因为程序的入口只能有一个第一次写代码一些常的错误总结被写成了后边的漏掉了代码中不能使用中文符号比如括号和分号一条语句结束后有分号和库函数在上面的代码中有一句代码如下代码中使用了函数实现了在屏幕上的信息的打印这里简单的介绍一下是一个库函数它的功能是在标准输出设备一般指屏幕上进行信息的打印上面的代码是使用函数打印字符串只要把想要打印的一串字符放在双引号中并传递给函数就可以打印函数也可以用来打印其他类型的数据比如打印整型打印字符打印双精度浮点型这里的等是占位符会被后边的值替换后期课程再介绍同时我们在使用库函数的时候是需要包含头文件的比如函数需要包含的就是这个头文件具体的方法就是那什么是库函数呢为了不再重复实现常的代码让程序员提升开发效率语言标准规定了一组函数这些函数再由不同的编译器厂商根据标准进行实现提供给程序员使用这些函数组成了一个函数库被称为标准库这些函数也被称为库函数在这个基础上一些编译器厂商可能会额外扩展提供部分函数这些函数其他编译器不一定支持一个系列的库函数一般会声明在同一个头文件中所以库函数的使用要包含对应的头文件库函数比较多后期慢慢来介绍提前了解可参考链接关键字介绍语言中有一批保留的名字的符号比如这些符号被称为保留字或者关键字关键字都有特殊的意义是保留给语言使用的程序员自己在创建标识符的时候是不能和关键字重复的关键字也是不能自己创建的语言的个关键字如下注在标准中加入了等关键字一些关键字大家可以去了解一下不过使用最多的还是上面的个关键字注语言关键字的全部介绍后期我们讲课的过程中会慢慢介绍这些常用的关键字的字符和编码在键盘上可以敲出各种字符如等这些符号都被称为字符语言中字符是用单引号括起来的如我们知道在计算机中所有的数据都是以二进制的形式存储的那这些字符在内存中分别以什么样的二进制存储的呢如果我们每个人自己给这些字符中的每个字符编一个二进制序列这个叫做编码为了方便大家相互通信不造成混乱后来美国国家标准学会出台了一个标准编码语言中的字符就遵循了编码的方式编码表参考我们不需要记住所有的码表中的数字使用时查看就可以不过我们最好能掌握几组特殊的数据字符的码值从字符的码值从对应的大小写字符和的码值的差值是数字字符的码值从换行的值是在这些字符中码值从这个字符是不可打印字符无法打印在屏幕上观察单个字符的打印可以使用来指定格式主函数本函数无参数返回表示程序正常结束打印字符打印字符的码值可打印字符展示主函数该函数没有参数返回值总是返回表示程序正常结束初始化循环变量为循环遍历码从到的所有字符打印当前码对应的字符检查当前字符是否是每行的最后一个字符每行打印个字符如果是则换行程序正常结束返回运行结果如下字符串和语言中如何表示字符串呢使用双引号括起来的一串字符就被称为字符串如就是一个字符串字符串的打印格式可以使用来指定也可以直接打印如下程序入口主函数无参数返回值总是返回表示程序正常结束输出字符串再次输出字符串程序正常结束返回语言字符串中一个特殊的知识就是在字符串的末尾隐藏放着一个字符这个字符是字符串的结束标志第讲语言常概念的监视窗口观察字符串对于字符串我们实际上看到了个字符但是实际上在末尾还隐藏一个的转义字符是字符串的结束标志所以我们在使用库函数打印字符串或者计算字符串度的时候遇到的时候就自动停止了语言中也可以把一个字符串放在一个字符数组中我们在这里利用下面的代码验证一下的功能主函数该函数无参数无返回值主要功能是演示字符数组和字符串的输出定义并初始化一个字符数组包含字符定义并初始化一个字符数组内容为字符串输出字符数组实际上由于末尾没有输出会直到遇到或内存的边界输出字符数组这是一个标准字符串会正确输出到为止程序正常结束这样的代码我调试的时候观察一下和的内容和中内容的对比运行结果我们可以看到字符数组在打印的时候打印了后还打印了一些随机值这就是因为在末尾的地方没有字符作为结束标志在打印的时候没有停止但是的打印就是完全正常的就是因为数组是使用字符串常量初始化的数组中有作为技术标志打印可以正常停止如果我们在数组中单独放一个字符会怎么样呢主函数本函数无参数本函数返回一个整数表示程序执行的结果定义并初始化一个包含字符和空字符的字符数组定义并初始化一个包含字符串的字符数组打印数组中的字符串打印数组中的字符串打印字符串字面量其中的作为字符串结束符程序执行成功返回运行结果看到三次打印的结果是一样的了都是打印到的时候就停止了那从上述的例子我们确实能够观察到的作用和重要性的转义字符也许在前面的代码中你看到很纳闷是啥其实在字符中有一组特殊的字符是转义字符转义字符顾名思义转变原来的意思的字符比如我们有字符在字符串中打印的时候自然能打印出这个字符如下主函数本函数无参数返回表示程序正常结束打印字符串运行结果如果我们修改一下代码在的前面加上变成如下代码主函数本函数无参数本函数返回一个整数固定为表示程序正常结束打印字符串后跟一个换行符接着打印程序正常结束返回输出的结果我们可以看到修改的前后代码输出的结果截然不同的那这是为什么呢这就是转义字符的问题是一个转义字符表示换行的意思我们可以简单的理解为让的意思发生了转变本来是一个普通的字符被转义为换行的意思语言中像这样的转义字符还有一些具体如下在书写连续多个问号时使用防止他们被解析成三字母词在新的编译器上没法验证了用于表示字符常量用于表示一个字符串内部的双引号用于表示一个反斜杠防止它被解释为一个转义序列符警报这会使得终端发出警报声或出现闪烁或者两者同时发生退格键光标回退一个字符但不删除字符换符光标移到下一在现代系统上这已经反映不出来了行为改成类似于换行符回符光标移到同一行的开头制表符光标移到下一个水平制表位通常是下一个的倍数垂直分隔符光标移到下一个垂直制表位通常是下一行的同一列下面种转义字符可以理解为字符的进制或者进制表示形式表示个八进制的数字如表示字符表示个十六进制数字如表示字符字符代表没有内容就是这类转义字符的一种用于字符串的结束标志其码值是代码演示主函数打印单引号打印双引号打印路径发出警报声打印字符是进制转换成进制是以作为码值的字符是打印字符中的是进制转换成进制是以作为码值的字符是这些码值是可以自己写代码验证的大家也可以自己验证关于转义字符我们首先要了解然后要能在字符串中识别出来转义字符参考语句和语句分类语言的代码是由一条一条的语句构成的语言中的语句可为以下五类空语句表达式语句函数调用语句复合语句控制语句空语句空语句是最简单的一个分号就是一条语句是空语句空语句空语句一般出现的地方是这里需要一条语句但是这个语句不需要做任何事就可以写一个空语句表达式语句表达式语句就是在表达式的后边加上分号如下所示表达式语句函数调用语句函数调用的时候也会加上分号就是函数调用语句函数功能对两个整数进行相加并返回结果参数整数要相加的第一个数整数要相加的第二个数返回值两个整数的和主函数打印调用函数并将结果赋给复合语句复合语句其实就是前面讲过的代码块成对括号中的代码就构成一个代码块也被称为复合语句打印数组元素整型数组待打印的数组数组大小表示数组中元素的个数遍历数组打印每个元素初始化一个长度为的数组初始值全为填充数组倒序从到打印每个填充后的元素控制语句控制语句用于控制程序的执行流程以实现程序的各种结构方式语言支持三种结构顺序结构选择结构循环结构它们由特定的语句定义符组成语言有九种控制语句可分成以下三类条件判断语句也叫分支语句语句语句循环执行语句语句语句语句转向语句语句语句语句语句后期会给大家一一介绍控制语句注释是什么为什么写注释注释是对代码的说明编译器会忽略注释也就是说注释对实际代码没有影响注释是给程序员自己或者其他程序员看的好的注释可以帮我们更好的理解代码但是也不要过度注释不要写没必要的注释当然不写注释可能会让后期阅读代码的人抓狂写注释一定程度上反应了程序作者的素质建议大家写必要的注释在未来找工作的时候写代码时留下必要的注释也会给面试官留下更好的印象注释的种形式语言的注释有两种表示方法的形式第一种方法是将注释放在之间内部可以分行注释这是一行注释这种注释可以插在行内上面示例中用来对函数参数进行说明跟在它后面的代码依然会有效执行这种注释一定不能忘记写结束符号否则很容易导致错误注释一注释二上面示例的原意是第一行和第三行代码的尾部有两个注释但是第一行注释忘记写结束符号导致注释一延续到第三行结束的这个注释也不支持嵌套注释开始注释后遇到第一个就认为注释结束了注释二的形式第二种写法是将注释放在双斜杠后面从双斜杠到行尾都属于注释这种注释只能是单行可以放在行首也可以放在一行语句的结尾这是标准新增的语法这是一行注释这也是注释不管是哪一种注释都不能放在双引号里面双引号里面的注释符号会成为字符串的一部分解释为普通符号失去注释作用上面示例中双引号里面的注释符号都会被视为普通字符没有注释作用注释会被替换编译时注释会被替换成一个空格所以这里是注释会变成而不是课堂板书课堂代码完',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-12 10:24:59',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><link rel="stylesheet" href="/css/Praagraph_number.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/XingJi.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xingji-love.github.io/" title="个人博客"><img class="back-menu-item-icon" src="/img/XingJi.jpg" alt="个人博客"/><span class="back-menu-item-text">个人博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://xingji-hzb.zeabur.app/" title="个人博客"><img class="back-menu-item-icon" src="/img/XingJi-1.jpg" alt="个人博客"/><span class="back-menu-item-text">个人博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://githubhzb.github.io/" title="个人博客(1)"><img class="back-menu-item-icon" src="/img/XingJi-1.jpg" alt="个人博客(1)"/><span class="back-menu-item-text">个人博客(1)</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://docs.anheyu.com/" title="安知鱼主题"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="安知鱼主题"/><span class="back-menu-item-text">安知鱼主题</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">Github 主页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/XingJi-love" title="XingJi-love"><img class="back-menu-item-icon" src="/img/XingJi.jpg" alt="XingJi-love"/><span class="back-menu-item-text">XingJi-love</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/githubHZB" title="githubHZB"><img class="back-menu-item-icon" src="/img/XingJi-1.jpg" alt="githubHZB"/><span class="back-menu-item-text">githubHZB</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">XingJiの博客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 统计</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/charts/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tongji"></use></svg><span> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/statistics/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tongji1"></use></svg><span> 访问统计</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">C语言程序设计知识点总结<sup>7</sup></a><a href="/tags/JavaSE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">JavaSE知识点总结<sup>3</sup></a><a href="/tags/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E4%B8%8E%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">向量代数与空间解析几何题型总结<sup>1</sup></a><a href="/tags/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">多元函数微分学题型总结<sup>1</sup></a><a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">微分方程题型总结<sup>1</sup></a><a href="/tags/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 1.05rem;">无穷级数题型总结<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url">C语言程序设计</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>C语言程序设计知识点总结</span></a></span></div></div><h1 class="post-title" itemprop="name headline">第1讲：C语言常⻅概念</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-05-04T06:54:42.000Z" title="发表于 2024-05-04 14:54:42">2024-05-04</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-08-12T02:24:59.613Z" title="更新于 2024-08-12 10:24:59">2024-08-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">5.7k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为昆明"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>昆明</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=b788c47f-c870-abc8-ea98-779e81df70d4"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://xingji-love.zeabur.app/posts/26817/"><header><a class="post-meta-categories" href="/categories/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" itemprop="url">C语言程序设计</a><a href="/tags/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" tabindex="-1" itemprop="url">C语言程序设计知识点总结</a><h1 id="CrawlerTitle" itemprop="name headline">第1讲：C语言常⻅概念</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">XingJiの博客</span><time itemprop="dateCreated datePublished" datetime="2024-05-04T06:54:42.000Z" title="发表于 2024-05-04 14:54:42">2024-05-04</time><time itemprop="dateCreated datePublished" datetime="2024-08-12T02:24:59.613Z" title="更新于 2024-08-12 10:24:59">2024-08-12</time></header><blockquote>
+<p><strong>正文开始</strong></p>
+</blockquote>
+<h1 id="C语言是什么？"><a href="#C语言是什么？" class="headerlink" title="C语言是什么？"></a>C语言是什么？</h1><p>人和人交流使用的是自然语言，如：汉语、英语、日语</p>
+<p>那人和计算机是怎么交流的呢？使用 计算机语言 。</p>
+<p>目前已知已经有上千种计算机语言，人们是通过计算机语言写的程序，给计算机下达指令，让计算机工作的。</p>
+<p>C语言就是众多计算机语言中的一种，当然C++&#x2F;Java&#x2F;Go&#x2F;Python都是计算机语言。</p>
+<h1 id="C语言的历史和辉煌"><a href="#C语言的历史和辉煌" class="headerlink" title="C语言的历史和辉煌"></a>C语言的历史和辉煌</h1><p>C语言最初是作为Unix系统的开发工具而发明的。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image.png" alt="alt text"><br><a target="_blank" rel="noopener" href="https://www.tiobe.com/tiobe-index/">https://www.tiobe.com/tiobe-index/</a></p>
+<h1 id="编译器的选择VS-2022"><a href="#编译器的选择VS-2022" class="headerlink" title="编译器的选择VS 2022"></a>编译器的选择VS 2022</h1><h2 id="编译和链接"><a href="#编译和链接" class="headerlink" title="编译和链接"></a>编译和链接</h2><p>C语言是一⻔ 编译型 计算机语言，C语言源代码都是文本文件，文本文件本身无法执行，必须通过 编译器 翻译和 链接器 的链接，生成 二进制的可执行文件 ，可执行文件才能执行。</p>
+<p>C语言代码是放在 **.c ***<em>为后缀的文件中的，要得到最终运行的可执行程序，中间要经过 <strong>编译</strong></em> 和 *<strong>链接</strong> 2 个<br>过程。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-1.png" alt="alt text"><br>VS2022项目中的.c文件              </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-2.png" alt="alt text"><br>.c文件的展示</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-3.png" alt="alt text"><br>C语言代码</p>
+<p>一个工程一般都会有多个源文件组成，如下图所示，演示了源程序经过编译器和链接器处理的过程。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-21.png" alt="alt text">  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-4.png" alt="alt text"><br>注：</p>
+<ol>
+<li>每个源文件(.c)单独经过 编译器 处理生成对应的目标文件(.obj为后缀的文件)</li>
+<li>多个目标文件和库文件经过 链接器 处理生成对应的可执行程序(.exe文件)</li>
+</ol>
+<p>这就是，在Windows电脑上C语言程序生成的exe可执行文件<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-5.png" alt="alt text"><br>可执行程序</p>
+<h3 id="编译器的对比"><a href="#编译器的对比" class="headerlink" title="编译器的对比"></a>编译器的对比</h3><p>C语言是一⻔ 编译型 的计算机语言，需要依赖编译器将计算机语言转换成机器能够执行的机器指令。<br>那我们常⻅的C语言编译器都有哪些呢？</p>
+<p>比如： <strong>msvc</strong> 、<strong>clang</strong>、<strong>gcc</strong>就是一些常⻅的编译器，当然也有一些 集成开发环境如<strong>VS2022</strong>、<br><strong>XCode</strong>、<strong>CodeBlocks</strong>、<strong>DevC++<strong>、</strong>Clion</strong>等。</p>
+<blockquote>
+<p>集成开发环境（IDE）用于提供程序开发环境的应用程序，一般包括代码编辑器、编译器、调试器和图形用戶界面等工具。集成了代码编写功能、分析功能、编译功能、调试功能等一体化的开发软件服务套。</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-6.png" alt="alt text"> VS2022  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-7.png" alt="alt text"> XCode  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-8.png" alt="alt text"> CodeBlocks   <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-9.png" alt="alt text"> DevC++   <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-10.png" alt="alt text"> Clion</p>
+<ul>
+<li><strong>VS2022</strong> 集成了MSVC（安装报包较大一些，安装简单，无需多余配置，使用起来非常方便）</li>
+<li><strong>XCode</strong> 集成了clang（苹果电脑上的开发工具）</li>
+<li><strong>CodeBlocks</strong> 集成了gcc（这个工具比较小众，需要配置环境，不太推荐）</li>
+<li><strong>DevC++</strong> 集成了gcc（小巧，但是工具过于简单，对于代码⻛格的养成不好，一些竞赛使用）</li>
+<li><strong>Clion</strong>是默认使用CMake，编译器是可以配置的（工具是收费，所以暂时推荐大家使用）</li>
+</ul>
+<p>整体考虑，推荐大家安装** VS2022 **的社区版本学习 ，免费，使用方便，工作中常⻅。<br>VS2022的安装教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11R4y1s7jz/">https://www.bilibili.com/video/BV11R4y1s7jz/</a></p>
+<h4 id="VS2022的优缺点"><a href="#VS2022的优缺点" class="headerlink" title="VS2022的优缺点"></a>VS2022的优缺点</h4><p><strong>优点：</strong></p>
+<ul>
+<li><strong>VS2022</strong>是一个主流的集成开发环境，企业中使用较为普遍</li>
+<li><strong>VS2022</strong>包含了：编辑器+编译器+调试器，功能强大</li>
+<li>直接安装即可使用，基本不用额外配置环境，上手容易</li>
+<li>默认界面是中文的，初学者友好</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>功能丰富，安装包大，占用空间多。</li>
+</ul>
+<h1 id="VS项目和源文件、头文件介绍"><a href="#VS项目和源文件、头文件介绍" class="headerlink" title="VS项目和源文件、头文件介绍"></a>VS项目和源文件、头文件介绍</h1><p>在VS上写代码，我们是需要创建项目的，直接新建项目就可以了。<br>在项目中就可以添加源文件和头文件。<br>C语言把 <strong>.c</strong>为后缀的文件称为 <strong>源文件</strong> ，把 <strong>.h</strong>为后缀的文件称为 <strong>头文件</strong> 。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-11.png" alt="alt text"> 头文件和源文件在VS中展示    <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-12.png" alt="alt text"> 头文件和源文件在磁盘上</p>
+<h1 id="第一个C语言程序"><a href="#第一个C语言程序" class="headerlink" title="第一个C语言程序"></a>第一个C语言程序</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;hello C\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里演示VS2022中创建项目和编写C代码的过程，并运行出结果。<br>在VS2022上运行代码的快捷键：<strong>Ctrl+f5</strong></p>
+<h1 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h1><p>每个C语言程序不管有多少行代码，都是从<strong>main</strong>函数开始执行的，<strong>main</strong>函数是程序的入口，<br><strong>main</strong>函数也被叫做： <strong>主函数</strong> 。<strong>main</strong>前面的<strong>int</strong>表示<strong>main</strong>函数执行结束的时候返回一个整型类型的值。所以在<strong>main</strong>函数的最后写<strong>return 0</strong>;正好前后呼应。</p>
+<ul>
+<li>main函数是程序的入口</li>
+<li>main函数有且仅有一个</li>
+<li>即使一个项目中有多个.c文件，但是只能有一个main函数（因为程序的入口只能有一个）<br><em><strong>第一次写代码，一些常⻅的错误总结：</strong></em></li>
+<li><strong>main</strong>被写成了<strong>mian</strong></li>
+<li><strong>main</strong>后边的 **()**漏掉了</li>
+<li><strong>代码中不能使用中文符号，比如括号和分号</strong></li>
+<li><strong>一条语句结束后，有分号</strong></li>
+</ul>
+<h1 id="printf和库函数"><a href="#printf和库函数" class="headerlink" title="printf和库函数"></a>printf和库函数</h1><p> 在上面的代码中有一句代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="built_in">printf</span>(<span class="string">&quot;hello C\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>代码中使用了<strong>printf</strong>函数，实现了在屏幕上的信息的打印。<br>这里简单的介绍一下<strong>printf</strong>，<strong>printf</strong>是一个 <strong>库函数</strong> ，它的功能是在标准输出设备（一般指屏<br>幕）上进行信息的打印。上面的代码是使用<strong>printf</strong>函数打印字符串。只要把想要打印的一串字符放<br>在双引号中并传递给printf函数就可以打印。</p>
+<p>printf函数也可以用来打印其他类型的数据，比如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n = <span class="number">100</span> ;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n); <span class="comment">//printf打印整型</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="string">&#x27;q&#x27;</span>); <span class="comment">//printf打印字符</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>, <span class="number">3.14</span>); <span class="comment">//printf打印双精度浮点型</span></span><br></pre></td></tr></table></figure>
+<p>这里的 <strong>%d</strong>,<strong>%c</strong>等是 <strong>占位符</strong> ，会被后边的值替换。（后期课程再介绍）<br>同时我们在使用库函数的时候，是需要包含头文件的，比如：<strong>printf</strong>函数需要包含的就是<br><strong>stdio.h</strong>这个头文件，具体的方法就是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>那什么是库函数呢？</strong><br>为了不再重复实现常⻅的代码，让程序员提升开发效率，C语言标准规定了一组函数，这些函数再由不同的编译器厂商根据标准进行实现，提供给程序员使用。这些函数组成了一个函数库，被称为 标准库 ，这些函数也被称为库函数。在这个基础上一些编译器厂商可能会额外扩展提供部分函数（这些函数其他编译器不一定支持）。</p>
+<p>一个系列的库函数一般会声明在同一个头文件中，所以库函数的使用，要包含对应的头文件。<br>库函数比较多，后期慢慢来介绍，提前了解可参考链接：<a target="_blank" rel="noopener" href="https://cplusplus.com/reference/clibrary/">https://cplusplus.com/reference/clibrary/</a></p>
+<h1 id="关键字介绍"><a href="#关键字介绍" class="headerlink" title="关键字介绍"></a>关键字介绍</h1><p>C语言中有一批保留的名字的符号，比如：int、if、return，这些符号被称为 <strong>保留字</strong> 或者关键<br>字。</p>
+<ul>
+<li>关键字都有特殊的意义，是保留给C语言使用的</li>
+<li>程序员自己在创建标识符的时候是不能和关键字重复的</li>
+<li>关键字也是不能自己创建的。<br>C语言的 32 个关键字如下：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> <span class="keyword">break</span> <span class="keyword">case</span> <span class="type">char</span> <span class="type">const</span> <span class="keyword">continue</span> <span class="keyword">default</span> <span class="keyword">do</span> <span class="type">double</span> <span class="keyword">else</span> <span class="keyword">enum</span></span><br><span class="line"><span class="keyword">extern</span></span><br><span class="line"><span class="type">float</span> <span class="keyword">for</span> <span class="keyword">goto</span> <span class="keyword">if</span> <span class="type">int</span> <span class="type">long</span> <span class="keyword">register</span> <span class="keyword">return</span> <span class="type">short</span> <span class="type">signed</span> <span class="keyword">sizeof</span></span><br><span class="line"><span class="type">static</span></span><br><span class="line"><span class="keyword">struct</span> <span class="keyword">switch</span> <span class="keyword">typedef</span> <span class="keyword">union</span> <span class="type">unsigned</span> <span class="type">void</span> <span class="keyword">volatile</span> <span class="keyword">while</span></span><br></pre></td></tr></table></figure>
+
+<p>注：在C99标准中加入了inline、restrict、_Bool、_Complex、_Imaginary等关键<br>字。<br>一些关键字大家可以去了解一下，不过使用最多的还是上面的 32 个关键字。<br>注：<a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/keyword%EF%BC%88C%E8%AF%AD%E8%A8%80%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E5%85%A8%E9%83%A8%E4%BB%8B%E7%BB%8D%EF%BC%89">https://zh.cppreference.com/w/c/keyword（C语言关键字的全部介绍）</a></p>
+<p>后期我们讲课的过程中，会慢慢介绍这些常用的关键字的。</p>
+<h1 id="字符和ASCII编码"><a href="#字符和ASCII编码" class="headerlink" title="字符和ASCII编码"></a>字符和ASCII编码</h1><p>在键盘上可以敲出各种字符，如：a，q，@，#等，这些符号都被称为 <strong>字符</strong> ，C语言中字符是用单引号括起来的，如：’a’，’b’，‘@’。</p>
+<blockquote>
+<p>我们知道在计算机中所有的数据都是以二进制的形式存储的，那这些字符在内存中分别以什么样的二进制存储的呢？</p>
+</blockquote>
+<p>如果我们每个人自己给这些字符中的每个字符编一个二进制序列，这个叫做 <strong>编码</strong> ，为了方便大家相互通信，不造成混乱，后来美国国家标准学会（ANSI）出台了一个标准 <strong>ASCII编码</strong> ，C语言中的字符就遵循了ASCII编码的方式。</p>
+<p>ASCII编码表<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-13.png" alt="alt text"><br>参考：<a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/cpp/language/ascii">https://zh.cppreference.com/w/cpp/language/ascii</a></p>
+<p>我们不需要记住所有的ASCII码表中的数字，使用时查看就可以，不过我们最好能掌握几组特殊的数据：</p>
+<ul>
+<li>字符A<del>Z的ASCII码值从65</del>90</li>
+<li>字符a<del>z的ASCII码值从97</del>122</li>
+<li>对应的大小写字符(a和A)的ASCII码值的差值是32</li>
+<li>数字字符0<del>9的ASCII码值从48</del>57</li>
+<li>换行\n的ASCII值是：10 </li>
+<li>在这些字符中ASCII码值从0~31这32 个字符是不可打印字符，无法打印在屏幕上观察</li>
+</ul>
+<blockquote>
+<p>单个字符的打印可以使用%c来指定格式：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 本函数无参数。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回0，表示程序正常结束。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 打印字符Q</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="string">&#x27;Q&#x27;</span>);</span><br><span class="line">    <span class="comment">// 打印字符Q的ASCII码值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="number">81</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可打印字符展示：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * 该函数没有参数。</span></span><br><span class="line"><span class="comment"> * 返回值: 总是返回0，表示程序正常结束。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>; <span class="comment">// 初始化循环变量i为0</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">32</span>; i &lt;= <span class="number">127</span>; i++) <span class="comment">// 循环遍历ASCII码从32到127的所有字符</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%c &quot;</span>, i); <span class="comment">// 打印当前ASCII码对应的字符</span></span><br><span class="line">		<span class="keyword">if</span> (i % <span class="number">16</span> == <span class="number">15</span>) <span class="comment">// 检查当前字符是否是每行的最后一个字符（每行打印16个字符）</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>); <span class="comment">// 如果是，则换行</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程序正常结束，返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果如下</strong><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-14.png" alt="alt text"></p>
+<h1 id="字符串和-0"><a href="#字符串和-0" class="headerlink" title="字符串和\ 0"></a>字符串和\ 0</h1><p>C语言中如何表示字符串呢？ <strong>使用双引号括起来的一串字符就被称为字符串</strong> ，如：”abcdef”，就是一个<br>字符串。</p>
+<blockquote>
+<p>字符串的打印格式可以使用%s来指定，也可以直接打印如下：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 程序入口主函数</span></span><br><span class="line"><span class="comment"> * 无参数</span></span><br><span class="line"><span class="comment"> * 返回值: 总是返回0，表示程序正常结束</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 输出字符串&quot;hello C&quot;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, <span class="string">&quot;hello C&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 再次输出字符串&quot;hello c&quot;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello c&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程序正常结束，返回0</span></span><br><span class="line">&#125;```</span><br><span class="line">**C语言字符串中一个特殊的知识，就是在字符串的末尾隐藏放着一个\<span class="number">0</span>字符，这个\<span class="number">0</span>字符是字符串的结束标志。**</span><br><span class="line">![alt text](./第<span class="number">1</span>讲：C语言常⻅概念/image<span class="number">-15.</span>png)</span><br><span class="line">VS2022的监视窗口观察字符串</span><br><span class="line"></span><br><span class="line">对于字符串<span class="string">&quot;abcdef&quot;</span>，我们实际上看到了 <span class="number">6</span> 个字符：a,b,c,d,e,f，但是实际上在末尾还隐藏一个 **\<span class="number">0</span>**的</span><br><span class="line">转义字符，**\<span class="number">0</span>**是 **字符串的结束标志** 。所以我们在使用库函数**<span class="built_in">printf</span>()**打印字符串或者</span><br><span class="line">**<span class="built_in">strlen</span>()**计算字符串⻓度的时候，遇到 **\<span class="number">0</span>** 的时候就自动停止了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;C语言中也可以把一个字符串放在一个字符数组中，我们在这里利用下面的代码验证一下 **\<span class="number">0</span>**的功能。</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * 该函数无参数，无返回值。主要功能是演示字符数组和字符串的输出。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 定义并初始化一个字符数组arr1，包含字符 &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;</span></span><br><span class="line">    <span class="type">char</span> arr1[] = &#123; <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span> &#125;;</span><br><span class="line">    <span class="comment">// 定义并初始化一个字符数组arr2，内容为字符串&quot;abc&quot;</span></span><br><span class="line">    <span class="type">char</span> arr2[] = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出字符数组arr1，实际上由于末尾没有&#x27;\0&#x27;，输出会直到遇到&#x27;\0&#x27;或内存的边界</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr1);</span><br><span class="line">    <span class="comment">// 输出字符数组arr2，这是一个标准字符串，会正确输出到&#x27;\0&#x27;为止</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr2);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样的代码，我调试的时候，观察一下arr1和arr2的内容：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-16.png" alt="alt text"><br>arr1和arr2中内容的对比</p>
+<p>运行结果：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-17.png" alt="alt text"></p>
+<blockquote>
+<p>我们可以看到，<strong>arr1</strong>字符数组在打印的时候，打印了<strong>a</strong>、<strong>b</strong>、<strong>c</strong>后还打印了一些随机值，这就是<br>因为<strong>arr1</strong>在末尾的地方没有\0字符作为结束标志，在打印的时候没有停止。<br>但是<strong>arr2</strong>的打印就是完全正常的，就是因为<strong>arr2</strong>数组是使用字符串常量初始化的，数组中有<br>作为技术标志，打印可以正常停止。</p>
+</blockquote>
+<blockquote>
+<p>如果我们在arr1数组中单独放一个 **’\0’**字符会怎么样呢？</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 本函数无参数。</span></span><br><span class="line"><span class="comment"> * 本函数返回一个整数，表示程序执行的结果。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 定义并初始化一个包含字符 &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27; 和空字符的字符数组</span></span><br><span class="line">	<span class="type">char</span> arr1[] = &#123; <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;\0&#x27;</span> &#125;;</span><br><span class="line">    <span class="comment">// 定义并初始化一个包含字符串 &quot;abc&quot; 的字符数组</span></span><br><span class="line">	<span class="type">char</span> arr2[] = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">    <span class="comment">// 打印 arr1 数组中的字符串</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr1);</span><br><span class="line">    <span class="comment">// 打印 arr2 数组中的字符串</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr2);</span><br><span class="line">    <span class="comment">// 打印 字符串字面量 &quot;abc\0def&quot;，其中的 &#x27;\0&#x27; 作为字符串结束符</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, <span class="string">&quot;abc\0def&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程序执行成功，返回 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-18.png" alt="alt text"></p>
+<blockquote>
+<p>看到三次打印的结果是一样的了，都是打印到 <strong>\0</strong>的时候就停止了，那从上述的例子我们确实能够观察到 <strong>\0</strong> 的作用和重要性的。</p>
+</blockquote>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><p>也许在前面的代码中你看到 <strong>\n</strong>,<strong>\0</strong>很纳闷是啥。其实在字符中有一组特殊的字符是 <strong>转义字符</strong> ，转义字符顾名思义：转变原来的意思的字符。</p>
+<blockquote>
+<p>比如：我们有字符<strong>n</strong>，在字符串中打印的时候自然能打印出这个字符，如下：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 本函数无参数。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @return 返回0，表示程序正常结束。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 打印字符串&quot;abcndef&quot;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;abcndef&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-19.png" alt="alt text"></p>
+<blockquote>
+<p>如果我们修改一下代码，在<strong>n</strong>的前面加上*,变成如下代码：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 本函数无参数。</span></span><br><span class="line"><span class="comment"> * 本函数返回一个整数，固定为0，表示程序正常结束。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 打印字符串&quot;abc&quot;后跟一个换行符，接着打印&quot;def&quot;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;abc\ndef&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ; <span class="comment">// 程序正常结束，返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出的结果：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-20.png" alt="alt text"></p>
+<blockquote>
+<p>我们可以看到修改的前后代码输出的结果，截然不同的，那这是为什么呢？</p>
+</blockquote>
+<p>这就是转义字符的问题，<strong>\n</strong>是一个转义字符表示换行的意思，我们可以简单的理解为*让<strong>n</strong>的意思发生了转变，<strong>n</strong>本来是一个普通的字符，被*转义为换行的意思。</p>
+<p>C语言中像这样的转义字符还有一些，具体如下：</p>
+<ul>
+<li><strong>?</strong>：在书写连续多个问号时使用，防止他们被解析成三字母词，在新的编译器上没法验证了。</li>
+<li><strong>&#39;</strong>：用于表示字符常量’</li>
+<li><strong>&quot;</strong>：用于表示一个字符串内部的双引号</li>
+<li><strong>\</strong>：用于表示一个反斜杠，防止它被解释为一个转义序列符。</li>
+<li><strong>\a</strong>：警报，这会使得终端发出警报声或出现闪烁，或者两者同时发生。</li>
+<li><strong>\b</strong>：退格键，光标回退一个字符，但不删除字符。</li>
+<li><strong>\f</strong>：换⻚符，光标移到下一⻚。在现代系统上，这已经反映不出来了，行为改成类似于 <strong>\v</strong>。</li>
+<li><strong>\n</strong>：换行符。</li>
+<li><strong>\r</strong>：回⻋符，光标移到同一行的开头。</li>
+<li><strong>\t</strong>：制表符，光标移到下一个水平制表位，通常是下一个4&#x2F;8的倍数。</li>
+<li><strong>\v</strong>：垂直分隔符，光标移到下一个垂直制表位，通常是下一行的同一列。</li>
+</ul>
+<p>下面 2 种转义字符可以理解为：字符的 8 进制或者 16 进制表示形式</p>
+<ul>
+<li><strong>\ddd</strong>：ddd表示1~3个八进制的数字。如：\130表示字符X</li>
+<li><strong>\xdd</strong>：dd表示^2 个十六进制数字。如：\x30表示字符^0<br>\ 0 ：null字符，代表没有内容，<strong>\0</strong>就是 <strong>\ddd</strong>这类转义字符的一种，用于字符串的结束标志，其ASCII码值是0.</li>
+</ul>
+<blockquote>
+<p>代码演示：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 打印单引号</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="string">&#x27;\&#x27;&#x27;</span>);</span><br><span class="line">    <span class="comment">// 打印双引号</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, <span class="string">&quot;\&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">// 打印路径</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;c:\\test\\code\\test.c\n&quot;</span>);</span><br><span class="line">    <span class="comment">// 发出警报声</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\a&quot;</span>);</span><br><span class="line">    <span class="comment">// 打印字符&#x27;X&#x27;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="string">&#x27;\130&#x27;</span>); <span class="comment">//130是 8 进制，转换成 10 进制是 88 ，以 88 作为ASCII码值的字符是&#x27;X&#x27;</span></span><br><span class="line">    <span class="comment">// 打印字符&#x27;0&#x27;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, <span class="string">&#x27;\x30&#x27;</span>); <span class="comment">//x30中的 30 是 16 进制，转换成 10 进制是 48 ，以 48 作为ASCII码值的字符是&#x27;0&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些ASCII码值是可以自己写代码验证的，大家也可以自己验证。<br>关于转义字符我们首先要了解，然后要能在字符串中识别出来。</p>
+<p>转义字符参考：<a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/language/escape">https://zh.cppreference.com/w/c/language/escape</a></p>
+<h1 id="语句和语句分类"><a href="#语句和语句分类" class="headerlink" title="语句和语句分类"></a>语句和语句分类</h1><p>C语言的代码是由一条一条的 语句 构成的，C语言中的语句可为以下五类：</p>
+<ul>
+<li>空语句</li>
+<li>表达式语句</li>
+<li>函数调用语句</li>
+<li>复合语句</li>
+<li>控制语句</li>
+</ul>
+<h2 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h2><p><strong>空语句是最简单的，一个分号就是一条语句，是空语句。</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	;<span class="comment">//空语句</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>空语句，一般出现的地方是：这里需要一条语句，但是这个语句不需要做任何事，就可以写一个空语句。</p>
+</blockquote>
+<h3 id="表达式语句"><a href="#表达式语句" class="headerlink" title="表达式语句"></a>表达式语句</h3><blockquote>
+<p>表达式语句就是在表达式的后边加上分号。如下所示：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">20</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">0</span>;</span><br><span class="line">	b = a + <span class="number">5</span>; <span class="comment">//表达式语句</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数调用语句"><a href="#函数调用语句" class="headerlink" title="函数调用语句"></a>函数调用语句</h3><blockquote>
+<p>函数调用的时候，也会加上分号，就是函数调用语句。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 函数：Add</span></span><br><span class="line"><span class="comment"> * 功能：对两个整数进行相加并返回结果。</span></span><br><span class="line"><span class="comment"> * 参数：</span></span><br><span class="line"><span class="comment"> *   - x: 整数，要相加的第一个数。</span></span><br><span class="line"><span class="comment"> *   - y: 整数，要相加的第二个数。</span></span><br><span class="line"><span class="comment"> * 返回值：两个整数的和。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Add</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 主函数</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 打印&quot;hehe&quot;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hehe\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 调用Add函数，并将结果赋给ret</span></span><br><span class="line">    <span class="type">int</span> ret = Add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复合语句"><a href="#复合语句" class="headerlink" title="复合语句"></a>复合语句</h4><blockquote>
+<p>复合语句其实就是前面讲过的代码块，成对括号中的代码就构成一个代码块，也被称为复合语句。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 打印数组元素</span></span><br><span class="line"><span class="comment"> * @param arr 整型数组，待打印的数组</span></span><br><span class="line"><span class="comment"> * @param sz 数组大小，表示arr数组中元素的个数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> sz)</span> </span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; sz; i++) <span class="comment">// 遍历数组，打印每个元素</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">0</span> &#125;; <span class="comment">// 初始化一个长度为10的数组，初始值全为0</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) <span class="comment">// 填充数组，倒序从10到1</span></span><br><span class="line">	&#123;</span><br><span class="line">		arr[i] = <span class="number">10</span> - i;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, arr[i]); <span class="comment">// 打印每个填充后的元素</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h5><p>控制语句 用于控制程序的执行流程，以实现程序的各种结构方式（C语言支持三种结构：顺序结构、选择结构、循环结构），它们由特定的语句定义符组成，C语言有 九种控制语句 。</p>
+<blockquote>
+<p><strong>可分成以下三类：</strong></p>
+</blockquote>
+<ol>
+<li><strong>条件判断语句也叫分支语句</strong> ：if语句、switch语句；</li>
+<li><strong>循环执行语句</strong> ：do-while语句、while语句、for语句；</li>
+<li><strong>转向语句</strong> ：break语句、goto语句、continue语句、return语句。</li>
+</ol>
+<blockquote>
+<p>后期会给大家一一介绍控制语句。</p>
+</blockquote>
+<h1 id="注释是什么？为什么写注释？"><a href="#注释是什么？为什么写注释？" class="headerlink" title="注释是什么？为什么写注释？"></a>注释是什么？为什么写注释？</h1><blockquote>
+<p>注释是对代码的说明，编译器会忽略注释，也就是说，注释对实际代码没有影响。<br>注释是给程序员自己，或者其他程序员看的。<br>好的注释可以帮我们更好的理解代码，但是也不要过度注释，不要写没必要的注释。<br>当然不写注释可能会让后期阅读代码的人抓狂。<br>写注释一定程度上反应了程序作者的素质，建议大家写必要的注释，在未来找工作的时候，写代码时留下必要的注释也会给面试官留下更好的印象。</p>
+</blockquote>
+<h2 id="注释的-2-种形式"><a href="#注释的-2-种形式" class="headerlink" title="注释的 2 种形式"></a>注释的 2 种形式</h2><p>C语言的注释有两种表示方法。</p>
+<h3 id="的形式"><a href="#的形式" class="headerlink" title="&#x2F;**&#x2F;的形式"></a>&#x2F;**&#x2F;的形式</h3><p>第一种方法是将注释放在 **&#x2F;<em>…</em>&#x2F;**之间，内部可以分行。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 注释 */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是一行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这种注释可以插在行内。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="type">int</span> <span class="title function_">fopen</span><span class="params">(<span class="type">char</span>* s <span class="comment">/* file name */</span>, <span class="type">int</span> mode)</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面示例中，&#x2F;* file name <em>&#x2F;用来对函数参数进行说明，跟在它后面的代码依然会有效执行。<br>这种注释一定不能忘记写结束符号</em>&#x2F;，否则很容易导致错误。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;a &quot;</span>); <span class="comment">/* 注释一</span></span><br><span class="line"><span class="comment">printf(&quot;b &quot;);</span></span><br><span class="line"><span class="comment">printf(&quot;c &quot;); /* 注释二 */</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;d &quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>上面示例的原意是，第一行和第三行代码的尾部，有两个注释。但是，第一行注释忘记写结束符号，导致注释一延续到第三行结束。</p>
+<blockquote>
+<p>&#x2F;**&#x2F;的这个注释也不支持嵌套注释，&#x2F;<em>开始注释后，遇到第一个</em>&#x2F;就认为注释结束了。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">printf(&quot;a &quot;);</span></span><br><span class="line"><span class="comment">printf(&quot;b &quot;);</span></span><br><span class="line"><span class="comment">printf(&quot;c &quot;); /* 注释二 */</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;d &quot;</span>);</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<h4 id="的形式-1"><a href="#的形式-1" class="headerlink" title="&#x2F;&#x2F;的形式"></a>&#x2F;&#x2F;的形式</h4><p>第二种写法是将注释放在双斜杠&#x2F;&#x2F;后面，从双斜杠到行尾都属于注释。这种注释只能是单行，可以放在行首，也可以放在一行语句的结尾。这是<strong>C99</strong>标准新增的语法。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是一行注释</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> x = <span class="number">1</span> ; <span class="comment">// 这也是注释</span></span><br></pre></td></tr></table></figure>
+
+<p>不管是哪一种注释，都不能放在双引号里面。<br>双引号里面的注释符号，会成为字符串的一部分，解释为普通符号，失去注释作用。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="built_in">printf</span>(<span class="string">&quot;// hello /* world */ &quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>上面示例中，双引号里面的注释符号，都会被视为普通字符，没有注释作用。</p>
+<h5 id="注释会被替换"><a href="#注释会被替换" class="headerlink" title="注释会被替换"></a>注释会被替换</h5><p>编译时，注释会被替换成一个空格，所以<em><em>min&#x2F;</em> 这里是注释</em>&#x2F;Value<strong>会变成</strong>min Value<strong>，而不是</strong>minValue**。</p>
+<blockquote>
+<p>课堂板书:</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/2024-03-28-%E6%9D%BF%E4%B9%A6.png">https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/2024-03-28-%E6%9D%BF%E4%B9%A6.png</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-22.png" alt="alt text"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/posts/26817/image-23.png" alt="alt text"></p>
+<blockquote>
+<p>课堂代码:</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/test_3_28/test_3_28/test.c">https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/test_3_28/test_3_28/test.c</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/test_3_28/test_3_28/add.c">https://gitee.com/bitpg/class114training-camp-phase-5/blob/master/test_3_28/test_3_28/add.c</a></p>
+<blockquote>
+<p><strong>完</strong></p>
+</blockquote>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">XingJiの博客</div><div class="post-copyright__author_desc">好好学习，天天向上！</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://xingji-love.zeabur.app/posts/26817/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://xingji-love.zeabur.app/posts/26817/')">第1讲：C语言常⻅概念</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div><div class="reward-link mode"><a class="reward-link-button" href="/wechat/"><i class="anzhiyufont anzhiyu-icon-plant-fill"></i>运营模式与责任</a></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://xingji-love.zeabur.app/posts/26817/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=第1讲：C语言常⻅概念&amp;url=https://xingji-love.zeabur.app/posts/26817/&amp;pic=https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=b788c47f-c870-abc8-ea98-779e81df70d4" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xingji-love.zeabur.app" target="_blank">XingJiの博客</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>C语言程序设计知识点总结<span class="tagsPageCount">7</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://j2os.org/images/java-se.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/2933/" title="第10讲：操作符详解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=3b8a855e-0b27-543f-d0e3-a24e62a919a2" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-12</div><div class="title">第10讲：操作符详解</div></div></a></div><div><a href="/posts/18731/" title="第12讲：深⼊理解指针-通过指针引用数组"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925734783170892573440.jpg?_r_=117d3f21-8fd9-ae0d-1a9a-50f715a300a8" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-21</div><div class="title">第12讲：深⼊理解指针-通过指针引用数组</div></div></a></div><div><a href="/posts/49708/" title="第13讲：深⼊理解指针-字符，数组，函数-指针变量"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1704204478641170420447860.jpg?_r_=abfb616e-23bc-d3e6-47e8-07bac8adb5c7" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-23</div><div class="title">第13讲：深⼊理解指针-字符，数组，函数-指针变量</div></div></a></div><div><a href="/posts/39254/" title="第2讲：C语言数据类型和变量"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925734783170892573440.jpg?_r_=2d1728f9-44e9-4673-8366-e0d256ee6652" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-09</div><div class="title">第2讲：C语言数据类型和变量</div></div></a></div><div><a href="/posts/62221/" title="第3讲：分支和循环"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925734783170892573440.jpg?_r_=099f2ae5-d0d0-bd0c-9ee3-11e3cd7b23f1" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-24</div><div class="title">第3讲：分支和循环</div></div></a></div><div><a href="/posts/32969/" title="第9讲：函数递归"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1704300589243170430058978.jpg?_r_=fc0ea675-d1e9-b764-fd61-3ebeda76b9e8" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">第9讲：函数递归</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">XingJiの博客</h1><div class="author-info__desc">好好学习，天天向上！</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/XingJi-love" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://gitee.com/giteehzb" target="_blank" title="gitee"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gitee"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://blog.csdn.net/AcsdnHZB?spm=1010.2135.3001.5421" target="_blank" title="CSDN"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-csdn-copy"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://www.zhihu.com/people/crazy--boy-" target="_blank" title="Zhihu"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhihu"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://githubhzb.github.io/atom.xml" target="_blank" title="RSS"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-Rss"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1289480756" target="_blank" title="BiliBili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">C语言是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8E%86%E5%8F%B2%E5%92%8C%E8%BE%89%E7%85%8C"><span class="toc-number">2.</span> <span class="toc-text">C语言的历史和辉煌</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E9%80%89%E6%8B%A9VS-2022"><span class="toc-number">3.</span> <span class="toc-text">编译器的选择VS 2022</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text">编译和链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">3.1.1.</span> <span class="toc-text">编译器的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VS2022%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">VS2022的优缺点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VS%E9%A1%B9%E7%9B%AE%E5%92%8C%E6%BA%90%E6%96%87%E4%BB%B6%E3%80%81%E5%A4%B4%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.</span> <span class="toc-text">VS项目和源文件、头文件介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAC%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F"><span class="toc-number">5.</span> <span class="toc-text">第一个C语言程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#main%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">main函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#printf%E5%92%8C%E5%BA%93%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">printf和库函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E4%BB%8B%E7%BB%8D"><span class="toc-number">8.</span> <span class="toc-text">关键字介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%92%8CASCII%E7%BC%96%E7%A0%81"><span class="toc-number">9.</span> <span class="toc-text">字符和ASCII编码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C-0"><span class="toc-number">10.</span> <span class="toc-text">字符串和\ 0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">11.</span> <span class="toc-text">转义字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5%E5%92%8C%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="toc-number">12.</span> <span class="toc-text">语句和语句分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E8%AF%AD%E5%8F%A5"><span class="toc-number">12.1.</span> <span class="toc-text">空语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E5%8F%A5"><span class="toc-number">12.1.1.</span> <span class="toc-text">表达式语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E8%AF%AD%E5%8F%A5"><span class="toc-number">12.1.2.</span> <span class="toc-text">函数调用语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E8%AF%AD%E5%8F%A5"><span class="toc-number">12.1.2.1.</span> <span class="toc-text">复合语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">12.1.2.1.1.</span> <span class="toc-text">控制语句</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E6%B3%A8%E9%87%8A%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">注释是什么？为什么写注释？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E7%9A%84-2-%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-number">13.1.</span> <span class="toc-text">注释的 2 种形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="toc-number">13.1.1.</span> <span class="toc-text">&#x2F;**&#x2F;的形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9A%84%E5%BD%A2%E5%BC%8F-1"><span class="toc-number">13.1.1.1.</span> <span class="toc-text">&#x2F;&#x2F;的形式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E4%BC%9A%E8%A2%AB%E6%9B%BF%E6%8D%A2"><span class="toc-number">13.1.1.1.1.</span> <span class="toc-text">注释会被替换</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/9023/" title="【JavaSE基础】Java 快速入门"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://j2os.org/images/java-se.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【JavaSE基础】Java 快速入门"/></a><div class="content"><a class="title" href="/posts/9023/" title="【JavaSE基础】Java 快速入门">【JavaSE基础】Java 快速入门</a><time datetime="2024-08-01T06:06:46.000Z" title="发表于 2024-08-01 14:06:46">2024-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/18950/" title="【JavaSE基础】Java 语言概述"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://j2os.org/images/java-se.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【JavaSE基础】Java 语言概述"/></a><div class="content"><a class="title" href="/posts/18950/" title="【JavaSE基础】Java 语言概述">【JavaSE基础】Java 语言概述</a><time datetime="2024-07-31T03:54:06.000Z" title="发表于 2024-07-31 11:54:06">2024-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/52027/" title="Windows下Java环境配置教程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://j2os.org/images/java-se.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows下Java环境配置教程"/></a><div class="content"><a class="title" href="/posts/52027/" title="Windows下Java环境配置教程">Windows下Java环境配置教程</a><time datetime="2024-07-27T08:03:07.000Z" title="发表于 2024-07-27 16:03:07">2024-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/22439/" title="多元函数微分学"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925734783170892573440.jpg?_r_=6697fc2a-f989-294c-2916-9c954a6451e5" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多元函数微分学"/></a><div class="content"><a class="title" href="/posts/22439/" title="多元函数微分学">多元函数微分学</a><time datetime="2024-06-26T11:55:44.000Z" title="发表于 2024-06-26 19:55:44">2024-06-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/34027/" title="无穷级数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.toopic.cn/public/uploads/small/1708925732730170892573286.jpg?_r_=efc2efd6-fe38-f66d-4700-4ee3f564e3c3" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无穷级数"/></a><div class="content"><a class="title" href="/posts/34027/" title="无穷级数">无穷级数</a><time datetime="2024-06-25T11:14:57.000Z" title="发表于 2024-06-25 19:14:57">2024-06-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 By <a class="footer-bar-link" href="/" title="XingJiの博客" target="_blank">XingJiの博客</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://image.anheyu.com" title="图床">图床</a><a class="footer-bar-link cc" href="/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xingji-love.github.io/" title="个人博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi.jpg" alt="个人博客"/><span class="back-menu-item-text">个人博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://xingji-hzb.zeabur.app/" title="个人博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi-1.jpg" alt="个人博客"/><span class="back-menu-item-text">个人博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://githubhzb.github.io/" title="个人博客(1)"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi-1.jpg" alt="个人博客(1)"/><span class="back-menu-item-text">个人博客(1)</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://docs.anheyu.com/" title="安知鱼主题"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼主题"/><span class="back-menu-item-text">安知鱼主题</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">Github 主页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/XingJi-love" title="XingJi-love"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi.jpg" alt="XingJi-love"/><span class="back-menu-item-text">XingJi-love</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/githubHZB" title="githubHZB"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/XingJi-1.jpg" alt="githubHZB"/><span class="back-menu-item-text">githubHZB</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 统计</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/charts/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tongji"></use></svg><span> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/statistics/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tongji1"></use></svg><span> 访问统计</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">C语言程序设计知识点总结<sup>7</sup></a><a href="/tags/JavaSE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">JavaSE知识点总结<sup>3</sup></a><a href="/tags/%E5%90%91%E9%87%8F%E4%BB%A3%E6%95%B0%E4%B8%8E%E7%A9%BA%E9%97%B4%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">向量代数与空间解析几何题型总结<sup>1</sup></a><a href="/tags/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">多元函数微分学题型总结<sup>1</sup></a><a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">微分方程题型总结<sup>1</sup></a><a href="/tags/%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0%E9%A2%98%E5%9E%8B%E6%80%BB%E7%BB%93/" style="font-size: 0.88rem;">无穷级数题型总结<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("08/07/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 XingJiの博客 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("08/07/2024 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://at.alicdn.com/t/c/font_4646311_ffagjet65sq.js?spm=a313x.manage_type_myprojects.i1.10.14a63a81wjQxnz&amp;file=font_4646311_ffagjet65sq.js"></script><script src="/js/anzhiyu_charts.js?1"></script><script async src="/js/Praagraph_number.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '6889b8cfa81b4cc094ba05456659ec00';
+  var gaud_map_key = '132761a1368409fc5121e29a9aab1ac2';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

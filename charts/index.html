@@ -11,7 +11,7 @@
   preloader: {"source":3},
   friends_vue_info: undefined,
   navMusic: true,
-  mainTone: {"mode":"api","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  mainTone: undefined,
   authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
@@ -348,7 +348,7 @@ if (true) {
             color: color
           }
         },
-        data: ["C语言程序设计知识点总结","JavaSE知识点总结","C语言程序设计课后习题","多元函数微分学题型总结","向量代数与空间解析几何题型总结","无穷级数题型总结","PR剪辑","微分方程题型总结"]
+        data: ["C语言程序设计知识点总结","JavaSE知识点总结","C语言程序设计课后习题","向量代数与空间解析几何题型总结","微分方程题型总结","PR剪辑","无穷级数题型总结","多元函数微分学题型总结"]
       },
       yAxis: {
         name: '文章篇数',
@@ -376,7 +376,7 @@ if (true) {
       series: [{
         name: '文章篇数',
         type: 'bar',
-        data: [{"name":"C语言程序设计知识点总结","value":7,"path":"tags/C语言程序设计知识点总结/"},{"name":"JavaSE知识点总结","value":5,"path":"tags/JavaSE知识点总结/"},{"name":"C语言程序设计课后习题","value":2,"path":"tags/C语言程序设计课后习题/"},{"name":"多元函数微分学题型总结","value":1,"path":"tags/多元函数微分学题型总结/"},{"name":"向量代数与空间解析几何题型总结","value":1,"path":"tags/向量代数与空间解析几何题型总结/"},{"name":"无穷级数题型总结","value":1,"path":"tags/无穷级数题型总结/"},{"name":"PR剪辑","value":1,"path":"tags/PR剪辑/"},{"name":"微分方程题型总结","value":1,"path":"tags/微分方程题型总结/"}],
+        data: [{"name":"C语言程序设计知识点总结","value":7,"path":"tags/C语言程序设计知识点总结/"},{"name":"JavaSE知识点总结","value":5,"path":"tags/JavaSE知识点总结/"},{"name":"C语言程序设计课后习题","value":2,"path":"tags/C语言程序设计课后习题/"},{"name":"向量代数与空间解析几何题型总结","value":1,"path":"tags/向量代数与空间解析几何题型总结/"},{"name":"微分方程题型总结","value":1,"path":"tags/微分方程题型总结/"},{"name":"PR剪辑","value":1,"path":"tags/PR剪辑/"},{"name":"无穷级数题型总结","value":1,"path":"tags/无穷级数题型总结/"},{"name":"多元函数微分学题型总结","value":1,"path":"tags/多元函数微分学题型总结/"}],
         itemStyle: {
           borderRadius: [5, 5, 0, 0],
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -454,7 +454,7 @@ if (true) {
         radius: ['15%', '90%'],
         center: ['50%', '55%'],
         sort: 'desc',
-        data: [{"name":"C语言程序设计","value":9,"path":"categories/C语言程序设计/","id":"clzte8wu4001ezwuu0aikefve","parentId":"0"},{"name":"JavaSE","value":5,"path":"categories/JavaSE/","id":"clzte8wtr0004zwuu6mmncn1r","parentId":"0"},{"name":"高等数学(下)复习","value":4,"path":"categories/高等数学-下-复习/","id":"clzte8wtv000czwuud17w64yy","parentId":"0"},{"name":"PR剪辑学习","value":1,"path":"categories/PR剪辑学习/","id":"clzte8wu20016zwuu604z155l","parentId":"0"}],
+        data: [{"name":"C语言程序设计","value":9,"path":"categories/C语言程序设计/","id":"clztembtl001sk8uubjz1hk3v","parentId":"0"},{"name":"JavaSE","value":5,"path":"categories/JavaSE/","id":"clztembta0008k8uu2dttdl72","parentId":"0"},{"name":"高等数学(下)复习","value":4,"path":"categories/高等数学-下-复习/","id":"clztembth000wk8uud0iag99s","parentId":"0"},{"name":"PR剪辑学习","value":1,"path":"categories/PR剪辑学习/","id":"clztembtj0018k8uudnfk5eid","parentId":"0"}],
         itemStyle: {
           borderColor: '#fff',
           borderWidth: 2,
@@ -476,7 +476,7 @@ if (true) {
           color: color,
           formatter: '{b} : {c} ({d}%)'
         },
-        data: [{"name":"C语言程序设计","value":9,"path":"categories/C语言程序设计/","id":"clzte8wu4001ezwuu0aikefve","parentId":"0"},{"name":"JavaSE","value":5,"path":"categories/JavaSE/","id":"clzte8wtr0004zwuu6mmncn1r","parentId":"0"},{"name":"高等数学(下)复习","value":4,"path":"categories/高等数学-下-复习/","id":"clzte8wtv000czwuud17w64yy","parentId":"0"},{"name":"PR剪辑学习","value":1,"path":"categories/PR剪辑学习/","id":"clzte8wu20016zwuu604z155l","parentId":"0"}],
+        data: [{"name":"C语言程序设计","value":9,"path":"categories/C语言程序设计/","id":"clztembtl001sk8uubjz1hk3v","parentId":"0"},{"name":"JavaSE","value":5,"path":"categories/JavaSE/","id":"clztembta0008k8uu2dttdl72","parentId":"0"},{"name":"高等数学(下)复习","value":4,"path":"categories/高等数学-下-复习/","id":"clztembth000wk8uud0iag99s","parentId":"0"},{"name":"PR剪辑学习","value":1,"path":"categories/PR剪辑学习/","id":"clztembtj0018k8uudnfk5eid","parentId":"0"}],
         itemStyle: {
           emphasis: {
             shadowBlur: 10,

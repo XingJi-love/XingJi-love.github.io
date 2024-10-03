@@ -1,0 +1,300 @@
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(73, 177, 245, 0.2);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--theme-color);
+    background-image: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.4) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.4) 75%,
+            transparent 75%,
+            transparent);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: var(--theme-color);
+}
+
+/* 首页头图加载 */
+.pl-container {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: fixed;
+    overflow: hidden;
+    will-change: transform;
+    /* 添加性能优化 */
+    animation: blur-to-clear 2s cubic-bezier(.62, .21, .25, 1) 0s 1 normal backwards running, scale 1.5s cubic-bezier(.62, .21, .25, 1) 0s 1 both;
+}
+
+.pl-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+@keyframes blur-to-clear {
+    0% {
+        filter: blur(50px);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1.5) translateZ(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateZ(0);
+        opacity: 1;
+    }
+}
+
+.pl-visible {
+    opacity: 1;
+}
+
+.pl-blur {
+    /* 小图锯齿多，增加高斯模糊 */
+    filter: blur(50px);
+}
+
+/* 页脚透明 */
+#footer {
+    background: transparent !important;
+}
+
+/* 头图透明 */
+#page-header {
+    background: transparent !important;
+}
+
+/* 底部透明 */
+#footer-bar {
+    background: transparent !important;
+}
+
+/* 更多透明 */
+#category-bar {
+    background: transparent !important;
+}
+
+/* 日间模式不生效 */
+[data-theme="light"] #site-name,
+[data-theme="light"] #site-title,
+[data-theme="light"] #site-subtitle,
+[data-theme="light"] #post-info {
+    animation: none;
+}
+
+/* 夜间模式生效 */
+[data-theme="dark"] #site-name,
+[data-theme="dark"] #site-title {
+    animation: light_15px 10s linear infinite;
+}
+
+[data-theme="dark"] #site-subtitle {
+    animation: light_10px 10s linear infinite;
+}
+
+[data-theme="dark"] #post-info {
+    animation: light_5px 10s linear infinite;
+}
+
+/* 关键帧描述 */
+@keyframes light_15px {
+    0% {
+        text-shadow: #5636ed 0 0 15px;
+    }
+
+    12.5% {
+        text-shadow: #11ee5e 0 0 15px;
+    }
+
+    25% {
+        text-shadow: #f14747 0 0 15px;
+    }
+
+    37.5% {
+        text-shadow: #f1a247 0 0 15px;
+    }
+
+    50% {
+        text-shadow: #f1ee47 0 0 15px;
+    }
+
+    50% {
+        text-shadow: #b347f1 0 0 15px;
+    }
+
+    62.5% {
+        text-shadow: #002afa 0 0 15px;
+    }
+
+    75% {
+        text-shadow: #ed709b 0 0 15px;
+    }
+
+    87.5% {
+        text-shadow: #39c5bb 0 0 15px;
+    }
+
+    100% {
+        text-shadow: #5636ed 0 0 15px;
+    }
+}
+
+@keyframes light_10px {
+    0% {
+        text-shadow: #5636ed 0 0 10px;
+    }
+
+    12.5% {
+        text-shadow: #11ee5e 0 0 10px;
+    }
+
+    25% {
+        text-shadow: #f14747 0 0 10px;
+    }
+
+    37.5% {
+        text-shadow: #f1a247 0 0 10px;
+    }
+
+    50% {
+        text-shadow: #f1ee47 0 0 10px;
+    }
+
+    50% {
+        text-shadow: #b347f1 0 0 10px;
+    }
+
+    62.5% {
+        text-shadow: #002afa 0 0 10px;
+    }
+
+    75% {
+        text-shadow: #ed709b 0 0 10px;
+    }
+
+    87.5% {
+        text-shadow: #39c5bb 0 0 10px;
+    }
+
+    100% {
+        text-shadow: #5636ed 0 0 10px;
+    }
+}
+
+@keyframes light_5px {
+    0% {
+        text-shadow: #5636ed 0 0 5px;
+    }
+
+    12.5% {
+        text-shadow: #11ee5e 0 0 5px;
+    }
+
+    25% {
+        text-shadow: #f14747 0 0 5px;
+    }
+
+    37.5% {
+        text-shadow: #f1a247 0 0 15px;
+    }
+
+    50% {
+        text-shadow: #f1ee47 0 0 5px;
+    }
+
+    50% {
+        text-shadow: #b347f1 0 0 5px;
+    }
+
+    62.5% {
+        text-shadow: #002afa 0 0 5px;
+    }
+
+    75% {
+        text-shadow: #ed709b 0 0 5px;
+    }
+
+    87.5% {
+        text-shadow: #39c5bb 0 0 5px;
+    }
+
+    100% {
+        text-shadow: #5636ed 0 0 5px;
+    }
+}
+
+/* 评论区样式 */
+.tk-extras {
+    padding-bottom: 15px;
+    border-bottom: 2px dashed var(--hr-border)
+}
+
+.tk-extra {
+    border: var(--style-border);
+    padding: 4px 6px 4px 6px;
+    border-radius: 8px;
+    margin-right: 4px !important
+}
+
+.tk-expand {
+    margin-top: 16px;
+    background-color: var(--june-secondbg);
+    color: var(--june-fontcolor);
+    border-radius: 8px;
+    border: var(--style-border);
+}
+
+.tk-expand:hover {
+    background-color: var(--june) !important;
+    color: var(--june-white)
+}
+
+.twikoo .el-input__inner,
+.twikoo .el-textarea__inner {
+    transition: background-position-y 0.3s ease-in-out 0s !important;
+}
+
+.twikoo .el-input__inner:focus,
+.twikoo .el-textarea__inner:focus {
+    background-position-y: 350px;
+}
+
+.tk-input .el-textarea__inner {
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain
+}

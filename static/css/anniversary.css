@@ -1,0 +1,148 @@
+/* 背景与页面基本样式 */
+body[data-type="anniversary"] #web_bg {
+    background: var(--anzhiyu-background);
+}
+
+body[data-type="anniversary"] #page {
+    border: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: 0 0 !important;
+}
+
+body[data-type="anniversary"] #page .page-title {
+    display: none;
+}
+
+/* 卡片整体布局 */
+.anniversary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* 响应式布局 */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 卡片样式 */
+.anniversary-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.anniversary-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片标题和图标水平对齐的样式 */
+.card-title {
+    display: flex;
+    /* 使用 flexbox 使图标和标题水平对齐 */
+    align-items: center;
+    /* 图标和标题垂直居中 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 卡片标题前的图标 */
+/* .card-title::before {
+    content: url('/img/favicon.svg');
+    display: inline-block;
+    margin-right: 10px;
+} */
+/* 卡片标题前的图标样式 */
+.card-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* 如果没有图标，标题仍然显示 */
+.card-title img.card-icon {
+    display: inline-block;
+    /* 使图标显示为行内块 */
+}
+
+/* 卡片内日期与天数样式 */
+.card-date,
+.card-target-date,
+.card-countdown,
+.card-total-days {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* 天数显示加粗 */
+.countdown,
+.target-date,
+.total-days {
+    font-weight: bold;
+    color: #ffffff;
+    /* 文字颜色与卡片背景的对比 */
+}
+
+/* 根据卡片背景自动调整文字颜色 */
+.anniversary-card[data-background="dark"] .countdown,
+.anniversary-card[data-background="dark"] .target-date,
+.anniversary-card[data-background="dark"] .total-days {
+    color: #f9f9f9;
+    /* 深色背景的卡片用浅色文字 */
+}
+
+/* 卡片内图标大小 */
+.anniversary-card .card-title::before {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* 响应式布局优化，适配不同设备 */
+@media (max-width: 768px) {
+    .anniversary-cards {
+        grid-template-columns: 1fr;
+        /* 移动端一列展示 */
+    }
+
+    .anniversary-card {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* 动画效果 */
+.anniversary-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.anniversary-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 版权信息的样式 */
+.card-copyright {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #777;
+    text-align: right;
+}
+
+.card-copyright a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card-copyright a:hover {
+    text-decoration: underline;
+}

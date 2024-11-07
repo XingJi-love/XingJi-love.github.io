@@ -21025,6 +21025,13 @@ body[data-type="album_detail"] #page .author-content-item .card-content .banner-
   opacity: 0;
 }
 
+:root {
+  --anzhiyu-black-op: rgba(0, 0, 0, 0.7);
+  /* 示例值，根据实际情况调整 */
+  --anzhiyu-white: #ffffff;
+  /* 示例值，根据实际情况调整 */
+}
+
 #album_detail .tag-address {
   display: flex;
   position: absolute;

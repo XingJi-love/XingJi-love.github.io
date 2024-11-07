@@ -298,3 +298,7 @@
     -moz-background-size: contain;
     background-size: contain
 }
+
+body {
+    user-select: text !important;
+}

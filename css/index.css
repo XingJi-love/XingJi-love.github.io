@@ -21037,11 +21037,12 @@ body[data-type="album_detail"] #page .author-content-item .card-content .banner-
   color: var(--anzhiyu-white);
   transition: 0.3s;
   z-index: 1;
+  body {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* 标准语法 */
-  pointer-events: none; /* 防止所有鼠标事件 */
+    }
 }
 
 /* 处理单页背景 */

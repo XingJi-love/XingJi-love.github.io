@@ -21037,9 +21037,8 @@ body[data-type="album_detail"] #page .author-content-item .card-content .banner-
   color: var(--anzhiyu-white);
   transition: 0.3s;
   z-index: 1;
-  user-select: none;
-  -webkit-user-select: none; /* 添加此行以支持Safari浏览器和iOS上的Safari浏览器 */
 }
+
 /* 处理单页背景 */
 body[data-type="album"] #web_bg {
   background: var(--anzhiyu-background);

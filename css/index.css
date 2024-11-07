@@ -21037,7 +21037,7 @@ body[data-type="album_detail"] #page .author-content-item .card-content .banner-
   color: var(--anzhiyu-white);
   transition: 0.3s;
   z-index: 1;
-  user-select: none !important;
+  cursor: pointer;
 }
 
 /* 处理单页背景 */

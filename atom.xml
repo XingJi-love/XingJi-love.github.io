@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>XingJiのBlog</title>
+  <title>XingJi</title>
   
   <subtitle>好好学习，天天向上！</subtitle>
   <link href="https://xingji.fun/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://xingji.fun/</id>
   
   <author>
-    <name>XingJiのBlog</name>
+    <name>XingJi</name>
     
   </author>
   

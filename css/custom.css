@@ -303,3 +303,122 @@
 body {
     user-select: text !important;
 }
+
+/* 隐藏点赞 */
+/* 引用链接隐藏外部提示 */
+.tk-action .tk-action-link:first-child,
+.tag-link-tips {
+    display: none !important;
+}
+
+/* 手机端搜索栏样式 */
+@media screen and (max-width: 768px),
+(max-height: 580px) {
+    .search-dialog {
+        top: 2rem !important;
+        left: 5% !important;
+        width: 90% !important;
+        height: auto !important;
+        border-radius: 10px !important;
+    }
+}
+
+/* 首页文章的标签位置 */
+#recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap {
+    bottom: 15px !important;
+}
+
+/* 优化关于界面人生图片 */
+img.author-content-img.no-lightbox.entered.loaded {
+    filter: blur(0) brightness(.8);
+}
+
+/* 轮播下面导航栏分类优化 */
+#catalog-list,
+anzhiyu.barrageContent {
+    scrollbar-width: none;
+}
+
+/* 优化文章顶部分类和标签显示异常 */
+#post-firstinfo .meta-firstline span.post-meta-categories a.post-meta-categories {
+    background: rgb(107 107 107 / 50%) !important;
+}
+
+#post #post-info #post-firstinfo .meta-firstline .article-meta__tags {
+    color: #888 !important;
+}
+
+/* 优化手机端文章页面边角露底色 */
+@media screen and (max-width: 768px) {
+    .post .layout#content-inner {
+        background: transparent;
+    }
+}
+
+/* 代码块的边框显示优化 */
+#article-container figure.highlight {
+    border: var(--style-border);
+}
+
+/* 手机端nav栏 */
+#sidebar #sidebar-menus {
+    padding-top: 10px !important;
+}
+
+/* 擦亮效果 */
+#recent-posts>.recent-post-item:not(a)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    transform: translateX(-200%);
+    transition: transform 0.5s linear;
+    z-index: 1;
+}
+
+#recent-posts>.recent-post-item:not(a):hover::before {
+    transform: translateX(100%) skewX(-60deg);
+}
+
+/* Twikoo*/
+/* 评论框背景图优化 */
+.twikoo .el-input__inner,
+.twikoo .el-textarea__inner {
+    transition: background-position-y 0.3s ease-in-out 0s !important;
+}
+
+.twikoo .el-input__inner:focus,
+.twikoo .el-textarea__inner:focus {
+    background-position-y: 350px;
+}
+
+.tk-input .el-textarea__inner {
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain
+}
+
+/* 评论回复 */
+.tk-action-link {
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: var(--style-border);
+}
+
+.tk-action-link:hover {
+    background: var(--anzhiyu-theme);
+    color: #fff;
+}
+
+/* 评论后台优化 */
+#body-wrap.page .el-input__inner {
+    background: #ffffff0f;
+}
+
+[data-theme=dark] details>summary {
+    background: none !important;
+}

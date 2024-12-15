@@ -58,7 +58,7 @@
     API_URL: 'https://twikoo.xingji.fun',
     ADMIN_EMAIL_MD5: 'eea9a7d024576ba01539de9decd05cd1ce22fbfb11188cffbed7d56158875c11',
     PAGE_SIZE: 5,
-    LOADING_GIF: 'https://lib.bsgun.cn/Hexo-static/img/loading.gif',
+    LOADING_GIF: 'https://i.p-i.vip/47/20241108-672d90f36e4a6.gif',
   
     async fetchComments() {
       const controller = new AbortController();

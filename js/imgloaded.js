@@ -59,17 +59,17 @@
   
     const ldconfig = {
       light: {
-        smallSrc: 'https://i.p-i.vip/47/20241023-6718a8585926b.png', //浅色模式 小图链接 尽可能配置小于100k的图片 
-        largeSrc: 'https://i.p-i.vip/47/20241023-6718a8585926b.png', //浅色模式 大图链接 最终显示的图片
-        mobileSmallSrc: 'https://i.p-i.vip/47/20241023-6718a8585926b.png', //手机端浅色小图链接 尽可能配置小于100k的图片
-        mobileLargeSrc: 'https://i.p-i.vip/47/20241023-6718a8585926b.png', //手机端浅色大图链接 最终显示的图片
+        smallSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //浅色模式 小图链接 尽可能配置小于100k的图片 
+        largeSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //浅色模式 大图链接 最终显示的图片
+        mobileSmallSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //手机端浅色小图链接 尽可能配置小于100k的图片
+        mobileLargeSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //手机端浅色大图链接 最终显示的图片
         enableRoutes: ['/'],
         },
       dark: {
-        smallSrc: 'https://i.p-i.vip/47/20241023-6718a82cbb5e2.png', //深色模式 小图链接 尽可能配置小于100k的图片 
-        largeSrc: 'https://i.p-i.vip/47/20241023-6718a82cbb5e2.png', //深色模式 大图链接 最终显示的图片
-        mobileSmallSrc: 'https://i.p-i.vip/47/20241023-6718a82cbb5e2.png', //手机端深色模式小图链接 尽可能配置小于100k的图片
-        mobileLargeSrc: 'https://i.p-i.vip/47/20241023-6718a82cbb5e2.png', //手机端深色大图链接 最终显示的图片
+        smallSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //深色模式 小图链接 尽可能配置小于100k的图片 
+        largeSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //深色模式 大图链接 最终显示的图片
+        mobileSmallSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //手机端深色模式小图链接 尽可能配置小于100k的图片
+        mobileLargeSrc: 'https://i.p-i.vip/47/20240921-66ed9e10f0692.jpg', //手机端深色大图链接 最终显示的图片
         enableRoutes: ['/'],
         },
       };
